@@ -3,7 +3,16 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const isScrolled = ref(false)
 const isHidden = ref(false)
+const isMobileMenuOpen = ref(false)
 const activeSection = ref('home')
+
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
+
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false
+}
 
 let lastScrollY = 0
 
@@ -32,12 +41,20 @@ const handleScroll = () => {
   }
 }
 
+const handleResize = () => {
+  if (window.innerWidth >= 1024) {
+    closeMobileMenu()
+  }
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  window.addEventListener('resize', handleResize)
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', handleResize)
 })
 </script>
 
@@ -182,14 +199,26 @@ onUnmounted(() => {
 
         <!-- MOBILE BUTTON -->
         <button
-          class="lg:hidden flex flex-col gap-1"
-          data-bs-toggle="collapse"
-          data-bs-target="#mobileMenu"
+          type="button"
+          class="lg:hidden flex flex-col justify-center gap-1.5 p-2 -mr-2"
+          :aria-expanded="isMobileMenuOpen"
+          aria-controls="mobileMenu"
+          aria-label="Abrir menú de navegación"
+          @click="toggleMobileMenu"
         >
 
-          <span class="w-7 h-[2px] bg-white"></span>
-          <span class="w-7 h-[2px] bg-white"></span>
-          <span class="w-7 h-[2px] bg-white"></span>
+          <span
+            class="w-7 h-[2px] bg-white transition-transform duration-300 origin-center"
+            :class="isMobileMenuOpen ? 'translate-y-[5px] rotate-45' : ''"
+          ></span>
+          <span
+            class="w-7 h-[2px] bg-white transition-opacity duration-300"
+            :class="isMobileMenuOpen ? 'opacity-0' : ''"
+          ></span>
+          <span
+            class="w-7 h-[2px] bg-white transition-transform duration-300 origin-center"
+            :class="isMobileMenuOpen ? '-translate-y-[5px] -rotate-45' : ''"
+          ></span>
 
         </button>
 
@@ -197,8 +226,9 @@ onUnmounted(() => {
 
       <!-- MOBILE MENU -->
       <div
+        v-show="isMobileMenuOpen"
         id="mobileMenu"
-        class="collapse lg:hidden"
+        class="lg:hidden"
       >
 
         <div
@@ -210,40 +240,71 @@ onUnmounted(() => {
 
           <a
             href="#home"
-            class="text-gray-300 hover:text-lime-400 no-underline transition"
+            :class="[
+              'no-underline transition',
+              activeSection === 'home'
+                ? 'text-lime-400'
+                : 'text-gray-300 hover:text-lime-400'
+            ]"
+            @click="closeMobileMenu"
           >
             Home
           </a>
 
           <a
             href="#programs"
-            class="text-gray-300 hover:text-lime-400 no-underline transition"
+            :class="[
+              'no-underline transition',
+              activeSection === 'programs'
+                ? 'text-lime-400'
+                : 'text-gray-300 hover:text-lime-400'
+            ]"
+            @click="closeMobileMenu"
           >
             Programs
           </a>
 
           <a
             href="#transformations"
-            class="text-gray-300 hover:text-lime-400 no-underline transition"
+            :class="[
+              'no-underline transition',
+              activeSection === 'transformations'
+                ? 'text-lime-400'
+                : 'text-gray-300 hover:text-lime-400'
+            ]"
+            @click="closeMobileMenu"
           >
             Transformations
           </a>
 
           <a
             href="#pricing"
-            class="text-gray-300 hover:text-lime-400 no-underline transition"
+            :class="[
+              'no-underline transition',
+              activeSection === 'pricing'
+                ? 'text-lime-400'
+                : 'text-gray-300 hover:text-lime-400'
+            ]"
+            @click="closeMobileMenu"
           >
             Pricing
           </a>
 
           <a
             href="#contact"
-            class="text-gray-300 hover:text-lime-400 no-underline transition"
+            :class="[
+              'no-underline transition',
+              activeSection === 'contact'
+                ? 'text-lime-400'
+                : 'text-gray-300 hover:text-lime-400'
+            ]"
+            @click="closeMobileMenu"
           >
             Contact
           </a>
 
           <button
+            type="button"
             class="mt-2 px-6 py-3 rounded-full
                    bg-lime-400 text-black font-bold
                    hover:bg-lime-300 transition"
