@@ -5,6 +5,7 @@ import ProgramsSection from './components/ProgramsSection.vue';
 import TransformationsSection from './components/TransformationsSection.vue';
 import PricingSection from './components/PricingSection.vue';
 import CTASection from './components/CTASection.vue';
+import FooterSection from './components/FooterSection.vue';
 </script>
 
 <template>
@@ -14,4 +15,5 @@ import CTASection from './components/CTASection.vue';
   <TransformationsSection />
   <PricingSection />
   <CTASection />
+  <FooterSection />
 </template>
