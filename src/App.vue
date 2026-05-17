@@ -1,5 +1,7 @@
+<script setup>
+import HeroSection from './components/HeroSection.vue'
+</script>
+
 <template>
-  <div class="bg-red-500 h-screen">
-    APP FITNESS
-  </div>
+  <HeroSection />
 </template>
