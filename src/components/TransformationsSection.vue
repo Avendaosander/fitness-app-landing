@@ -10,23 +10,23 @@ const fatLoss = ref(0)
 const testimonials = [
   {
     quote:
-      'This program completely changed my life. I lost 12kg in 3 months and feel stronger than ever.',
+      'Este programa cambió mi vida por completo. Perdí 12 kg en 3 meses y me siento más fuerte que nunca.',
     name: 'Michael R.',
-    role: 'Member for 6 months',
+    role: 'Miembro por 6 meses',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
   },
   {
     quote:
-      'The HIIT program gave me energy I never had before. I feel transformed mentally and physically.',
+      'El programa HIIT me dio energía que nunca había tenido antes. Me siento transformado tanto a nivel mental como físico.',
     name: 'Sarah L.',
-    role: 'Member for 4 months',
+    role: 'Miembro por 4 meses',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2',
   },
   {
     quote:
-      'Best fitness decision I’ve ever made. The structure and coaching are next level.',
+      'Mejor decisión de fitness que he tomado. La estructura y el coaching son de nivel superior.',
     name: 'David K.',
-    role: 'Member for 1 year',
+    role: 'Miembro por 1 año',
     image: 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126',
   },
 ]
@@ -65,13 +65,13 @@ onMounted(() => {
     <div class="max-w-7xl mx-auto w-full px-4 relative z-10">
       <div class="text-center mb-12 md:mb-20">
         <p class="text-lime-400 tracking-[0.2em] sm:tracking-[0.4em] uppercase mb-3 text-sm sm:text-base">
-          Real Results
+          Resultados Reales
         </p>
         <h2 class="text-3xl sm:text-4xl md:text-6xl font-black px-2">
-          Transformations That Inspire
+          Transformaciones Inspiradoras
         </h2>
         <p class="text-gray-400 mt-5 max-w-2xl mx-auto text-sm sm:text-base px-2">
-          See how our members changed their bodies and lives through discipline and consistency.
+          Historias reales de miembros que han alcanzado sus objetivos y transformado sus vidas con nuestro programa.
         </p>
       </div>
 
@@ -98,7 +98,7 @@ onMounted(() => {
                   class="w-full h-56 sm:h-72 md:h-96 lg:h-[450px] object-cover"
                 />
                 <div class="absolute top-4 left-4 bg-black/70 px-4 py-2 rounded-full text-sm">
-                  BEFORE
+                  ANTES
                 </div>
               </div>
             </SwiperSlide>
@@ -111,7 +111,7 @@ onMounted(() => {
                   class="w-full h-56 sm:h-72 md:h-96 lg:h-[450px] object-cover"
                 />
                 <div class="absolute top-4 left-4 bg-lime-400 text-black px-4 py-2 rounded-full text-sm font-bold">
-                  AFTER
+                  DESPUÉS
                 </div>
               </div>
             </SwiperSlide>
@@ -127,7 +127,7 @@ onMounted(() => {
                    sm:px-6 sm:py-4"
           >
             <div>
-              <p class="text-gray-400 text-xs min-[550px]:text-sm">Body Fat Reduction</p>
+              <p class="text-white text-xs min-[550px]:text-sm">Reducción de grasa corporal</p>
               <h3 class="text-lg min-[550px]:text-xl sm:text-2xl font-black text-lime-400">-{{ fatLoss }}%</h3>
             </div>
           </div>

@@ -62,7 +62,7 @@ onUnmounted(() => {
 
   <nav
     :class="[
-      'fixed top-0 left-0 w-full z-50 transition-all duration-500',
+      'fixed top-0 left-0 w-full z-50 transition-all duration-100',
       isScrolled
         ? 'bg-black/70 backdrop-blur-xl border-b border-white/10 py-4'
         : 'bg-transparent py-6',
@@ -74,7 +74,7 @@ onUnmounted(() => {
 
       <div class="flex items-center justify-between">
 
-        <!-- LOGO -->
+        
         <a
           href="#home"
           class="text-2xl md:text-3xl font-black tracking-[0.25em]
@@ -85,7 +85,7 @@ onUnmounted(() => {
 
         </a>
 
-        <!-- DESKTOP MENU -->
+        
         <div
           class="hidden lg:flex items-center gap-10"
         >
@@ -99,9 +99,9 @@ onUnmounted(() => {
                 : 'hover:text-lime-400'
             ]"
           >
-            Home
+            Inicio
 
-            <!-- underline animada -->
+            
             <span
               class="absolute left-0 -bottom-1 h-[2px] bg-lime-400 transition-all duration-300"
               :class="activeSection === 'home' ? 'w-full' : 'w-0'"
@@ -117,9 +117,9 @@ onUnmounted(() => {
                 : 'hover:text-lime-400'
             ]"
           >
-            Programs
+            Programas
 
-            <!-- underline animada -->
+            
             <span
               class="absolute left-0 -bottom-1 h-[2px] bg-lime-400 transition-all duration-300"
               :class="activeSection === 'programs' ? 'w-full' : 'w-0'"
@@ -135,9 +135,9 @@ onUnmounted(() => {
                 : 'hover:text-lime-400'
             ]"
           >
-            Transformations
+            Transformaciones
 
-            <!-- underline animada -->
+            
             <span
               class="absolute left-0 -bottom-1 h-[2px] bg-lime-400 transition-all duration-300"
               :class="activeSection === 'transformations' ? 'w-full' : 'w-0'"
@@ -153,9 +153,9 @@ onUnmounted(() => {
                 : 'hover:text-lime-400'
             ]"
           >
-            Pricing
+            Precios
 
-            <!-- underline animada -->
+            
             <span
               class="absolute left-0 -bottom-1 h-[2px] bg-lime-400 transition-all duration-300"
               :class="activeSection === 'pricing' ? 'w-full' : 'w-0'"
@@ -171,9 +171,9 @@ onUnmounted(() => {
                 : 'hover:text-lime-400'
             ]"
           >
-            Contact
+            Contacto
 
-            <!-- underline animada -->
+            
             <span
               class="absolute left-0 -bottom-1 h-[2px] bg-lime-400 transition-all duration-300"
               :class="activeSection === 'contact' ? 'w-full' : 'w-0'"
@@ -182,7 +182,7 @@ onUnmounted(() => {
 
         </div>
 
-        <!-- CTA -->
+        
         <div class="hidden lg:block">
 
           <button
@@ -192,12 +192,12 @@ onUnmounted(() => {
                   hover:shadow-[0_0_20px_rgba(132,255,0,0.5)]
                   transition duration-300"
           >
-            Join Now
+            Inicia ahora
           </button>
 
         </div>
 
-        <!-- MOBILE BUTTON -->
+        
         <button
           type="button"
           class="lg:hidden flex flex-col justify-center gap-1.5 p-2 -mr-2"
@@ -224,7 +224,7 @@ onUnmounted(() => {
 
       </div>
 
-      <!-- MOBILE MENU -->
+      
       <div
         v-show="isMobileMenuOpen"
         id="mobileMenu"
@@ -248,7 +248,7 @@ onUnmounted(() => {
             ]"
             @click="closeMobileMenu"
           >
-            Home
+            Inicio
           </a>
 
           <a
@@ -261,7 +261,7 @@ onUnmounted(() => {
             ]"
             @click="closeMobileMenu"
           >
-            Programs
+            Programas
           </a>
 
           <a
@@ -274,7 +274,7 @@ onUnmounted(() => {
             ]"
             @click="closeMobileMenu"
           >
-            Transformations
+            Transformaciones
           </a>
 
           <a
@@ -287,7 +287,7 @@ onUnmounted(() => {
             ]"
             @click="closeMobileMenu"
           >
-            Pricing
+            Precios
           </a>
 
           <a
@@ -300,7 +300,7 @@ onUnmounted(() => {
             ]"
             @click="closeMobileMenu"
           >
-            Contact
+            Contacto
           </a>
 
           <button
@@ -309,7 +309,7 @@ onUnmounted(() => {
                    bg-lime-400 text-black font-bold
                    hover:bg-lime-300 transition"
           >
-            Join Now
+            Inicia ahora
           </button>
 
         </div>
